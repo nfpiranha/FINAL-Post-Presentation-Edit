@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Content</title>
+	<script type="text/javascript">
+	
+
+	
+
+	// make an array of images to choose from at rnadom when the page laods
+	var arrImg = [
+	"http://www.britsattheirbest.com/cr_gainsborough_blue_boy.jpg", 
+	"http://nonsuchbook.typepad.com/.a/6a00e5535ff83b883301538fba7fcc970b-pi", 
+	"http://www.artble.com/imgs/e/7/a/934950/the_death_of_sardanapalus.jpg",
+	"http://www.tate.org.uk/art/images/work/T/TW1/TW1258_9.jpg",
+	"https://upload.wikimedia.org/wikipedia/commons/4/45/Jacques-Louis_David_-_La_Mort_de_Marat.jpg",
+	"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Wright_of_Derby%2C_The_Orrery.jpg/1200px-Wright_of_Derby%2C_The_Orrery.jpg",
+	"http://www.bc.edu/bc_org/avp/cas/his/CoreArt/art/resourcesb/dav_oath.jpg",
+	"https://s-media-cache-ak0.pinimg.com/originals/12/0f/a9/120fa94d3f7014f9a621f4c3b98bc47e.jpg",
+	"http://theredlist.com/media/database/fine_arts/arthistory/japanese-prints/katsushika-hokusai/015-katsushika-hokusai-theredlist.jpg"];
+
+	// helper function for picking ranodm numbers
+	function randomIndex(max){
+		return Math.floor(Math.random() * max);
+	}
+
+	// we can write our random image function ourside the even listener but we should only call it after the DOM has loaded
+	function loadRandomImage(){
+		var index = randomIndex(arrImg.length);
+		var img = document.getElementById("animal");
+		// console.log(img);
+		img.src = arrImg[index];
+		link.href = arrLinks[index];
+	}
+
+
+
+		// wait for the page to finish rendering all DOM elements, then execute anonymous function that contains all of the functions and operations we
+		// want to perform on page load
+		
+		document.addEventListener("DOMContentLoaded", function(){
+			loadRandomImage();
+
+		});
+
+	</script>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<a href="#" id="DynLink"><img src="" id="animal"/></a>
+
+</body>
+</html>
